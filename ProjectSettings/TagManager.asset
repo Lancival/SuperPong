@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Paddle
+  - Powerup
+  - Border_Left
+  - Border_Right
   layers:
   - Default
   - TransparentFX

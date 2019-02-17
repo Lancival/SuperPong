@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\GameControllerScript.cs" />
      <Compile Include="Assets\Scripts\PaddleScript.cs" />
+     <Compile Include="Assets\Scripts\PowerupScript.cs" />
      <Compile Include="Assets\Scripts\ScoreTextControllerScript.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/Richard/Documents/Unity/Super Pong/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
