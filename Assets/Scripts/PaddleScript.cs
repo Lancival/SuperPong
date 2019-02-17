@@ -15,9 +15,9 @@ public class PaddleScript : MonoBehaviour {
         speed = gc.speed();
     	rb = gameObject.GetComponent<Rigidbody2D>(); // Get Rigidbody component from sprite
         if (leftSide)
-        	rb.position = new Vector2(0, 0); // If on the left side, set x-position to 0
+        	rb.position = new Vector2(-9, 0); // If on the left side, set x-position to 0
         else
-        	rb.position = new Vector2(0, 10); // If on the right side, set x-position to something
+        	rb.position = new Vector2(9, 0); // If on the right side, set x-position to something
     }
 
     // Update is called once per frame

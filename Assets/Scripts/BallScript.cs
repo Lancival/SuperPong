@@ -18,6 +18,11 @@ public class BallScript : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         speed = gc.speed();
-        rb.velocity = rb.velocity.Normalize() * speed;
+        rb.velocity.Normalize();
+        rb.velocity = rb.velocity * speed;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+    	
     }
 }
