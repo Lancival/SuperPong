@@ -5,42 +5,89 @@ using UnityEngine;
 public class PowerupScript : MonoBehaviour
 {
 	private GameControllerScript gc;
-	private int speed;
 	private Rigidbody2D rb;
-	private Vector2 velocity;
+	[SerializeField] private GameObject Ball;
+	[SerializeField] private GameObject Obstacle;
+
 
     // Start is called before the first frame update
-    public void Start()
-    {
+    public void Start() {
     	gc = GameObject.Find("GameController").GetComponent<GameControllerScript>();
-    	speed = gc.speed();
     	rb = gameObject.GetComponent<Rigidbody2D>(); // Get Rigidbody component from sprite
-		
-    	speed = 1;
-    	velocity = new Vector2(1f, 1f);
-    	
-    	rb.position = new Vector2(Random.Range(-7f, 7f), Random.Range(-4.5f, 4.5f));
-      gameObject.GetComponent<SpriteRenderer>().enabled = true;
-
+    	//rb.position = new Vector2(Random.Range(-7f, 7f), Random.Range(-4.5f, 4.5f));
     }
 
     // Update is called once per frame
-   	void Update() {
-      speed = gc.speed();
-		  rb.velocity = rb.velocity.normalized * speed;
-    }
+   	void Update() {}
+
+   	public void randomPowerup(){
+   		int randomSeed = Random.Range(0, 5);
+
+   		//incrementSpeed();
+   		switch (randomSeed){
+   			case 0: 
+   			p_superSpeed();
+   			break;
+
+   			case 1: 
+   			sizePaddles(.2f);
+   			break;
+
+   			case 2:
+   			sizePaddles(-.2f);
+   			break;
+
+   			case 3:
+   			addBall();
+   			break;
+
+   			case 4:
+   			addObstacle();
+   			break;
+
+
+
+   		}
+
+   		Destroy(gameObject);
+   	}
+
 
     void incrementSpeed() {gc.increaseSpeed(1);}
     
     void p_superSpeed(){
-   		gc.increaseSpeed(3);
+   		gc.increaseSpeed(2);
     }
 
-   	public void randomPowerup(){
-   		incrementSpeed();
-   		p_superSpeed();
-   		Destroy(gameObject);
-   	}
+    void addSparkles(){
+
+    }
+
+    void sizePaddles(float amt){
+    	GameObject[] arr = GameObject.FindGameObjectsWithTag("Paddle");
+    	/*
+    	if(arr[0].transform.localScale.y > 0.2){ //so if paddles won't disappear
+    		arr[0].transform.localScale += new Vector3(0, amt, 0);
+    		arr[1].transform.localScale += new Vector3(0, amt, 0);
+    	}
+    	*/
+    	arr[0].transform.localScale *= (1+amt);
+    	arr[1].transform.localScale *= (1+amt);
+
+
+	//transform.localScale += new Vector3(0.1F, 0, 0);
+    }
+
+    void addBall(){
+    	GameObject obj = Instantiate(Ball);
+    }
+
+    void addObstacle(){
+    	GameObject obj = Instantiate(Obstacle);
+
+    }
+
+
 
 
 }

@@ -41,7 +41,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3342042715352047247}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -115,6 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6ddc6823c1c4e03b39c3ccf33633da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ball: {fileID: 537491227861557850, guid: 6a7b12e2817024248ab428d53cbe1b35, type: 3}
+  Obstacle: {fileID: 9176772501764509892, guid: 5d9d37ea868e2466aa93e7659eae51f3,
+    type: 3}
 --- !u!58 &5043149519595620509
 CircleCollider2D:
   m_ObjectHideFlags: 0

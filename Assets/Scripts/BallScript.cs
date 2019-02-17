@@ -5,9 +5,9 @@ using UnityEngine;
 public class BallScript : MonoBehaviour {
 
 	private GameControllerScript gc;
-	private int speed;
 	private Rigidbody2D rb;
 	private Vector2 velocity;
+	private SpriteRenderer sr;
 
     // Start is called before the first frame update
     void Start() {
@@ -16,76 +16,39 @@ public class BallScript : MonoBehaviour {
 		ResetVelocity();
     }
 
-	void ResetPosition()
-	{
+	void ResetPosition() {
 		rb.velocity = new Vector2(0, 0);
 		transform.position = Vector2.zero;
 		Invoke("ResetVelocity", 1);
 	}
 
-	void ResetVelocity()
-	{
-		speed = gc.speed();
-		int rand = Random.Range(0, 4);
-		switch (rand)
-		{
-			case 0:
-				rb.velocity = new Vector2(1, 1);
-				break;
-			case 1:
-				rb.velocity = new Vector2(-1, 1);
-				break;
-			case 2:
-				rb.velocity = new Vector2(1, -1);
-				break;
-			case 3:
-				rb.velocity = new Vector2(-1, -1);
-				break;
-		}
-		rb.velocity = rb.velocity.normalized * speed;
+	void ResetVelocity() {
+		rb.velocity = new Vector2((Random.Range(0.0f, 1.0f) < 0.5 ? 1 : -1) * Random.Range(0.3f, 1.0f), Random.Range(-1.0f, 1.0f));
+		rb.velocity = rb.velocity.normalized * gc.speed();
 		velocity = rb.velocity;
 	}
 
     // Update is called once per frame
-    void Update() {
-        speed = gc.speed();
-		rb.velocity = rb.velocity.normalized * speed;
-    }
+    void Update() {rb.velocity = rb.velocity.normalized * gc.speed();}
 
     void OnCollisionEnter2D(Collision2D collision) {
     	if (collision.gameObject.tag == "Paddle")
-		{
 			rb.velocity = new Vector2(-velocity[0], velocity[1]);
-			velocity = rb.velocity;
-		}
 		else
-		{
 			rb.velocity = new Vector2(velocity[0], -velocity[1]);
-			velocity = rb.velocity;
-		}
+		velocity = rb.velocity;
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Powerup")
-        {
-            //rb.velocity = new Vector2(rb.velocity[0], rb.velocity[1]);
-            //ContactPoint2D contact = collision.contacts[0];
-            //Vector2 reflectedVelocity = Vector2.Reflect(rb.velocity, contact.normal);
-            //rb.velocity = reflectedVelocity;
-            
-            //rb.velocity = velocity = new Vector2(0, 0);
+        if (collision.gameObject.tag == "Powerup") {
             collision.gameObject.GetComponent<PowerupScript>().randomPowerup();
+            return;
         }
 		if (collision.gameObject.tag == "Border_Left")
-		{
 			gc.increaseRightScore(1);
-			ResetPosition();
-		}
 		else if (collision.gameObject.tag == "Border_Right")
-		{
 			gc.increaseLeftScore(1);
-			ResetPosition();
-		}
+		ResetPosition();
 	}
 	
 
