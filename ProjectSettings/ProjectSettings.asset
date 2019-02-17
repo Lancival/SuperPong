@@ -566,6 +566,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -589,7 +590,7 @@ PlayerSettings:
   cloudProjectId: b97e7bac-fca1-4446-a75a-c92f4dbf25f4
   framebufferDepthMemorylessMode: 0
   projectName: Super Pong
-  organizationId: lancival
+  organizationId: hothvi
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
