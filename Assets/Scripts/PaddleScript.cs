@@ -7,6 +7,7 @@ public class PaddleScript : MonoBehaviour {
 	public bool leftSide;
 
 	private RigidBody2D rb;
+	private int speed = 3;
     // Start is called before the first frame update
     void Start() {
     	rb = GameObject.getComponent<RigidBody2D>(); // Get Rigidbody component from sprite
@@ -20,8 +21,8 @@ public class PaddleScript : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (leftSide) {
-        	if (Input.getButtonDown("LeftSide")) {
-        		// Do stuff
+        	if (Input.GetAxis("LeftSide")) {
+        		rb.velocity.x = 
         	}
         }
         else {
