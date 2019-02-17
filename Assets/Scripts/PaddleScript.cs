@@ -6,11 +6,11 @@ public class PaddleScript : MonoBehaviour {
 
 	public bool leftSide;
 
-	private RigidBody2D rb;
+	private Rigidbody2D rb;
 	private int speed = 3;
     // Start is called before the first frame update
     void Start() {
-    	rb = GameObject.getComponent<RigidBody2D>(); // Get Rigidbody component from sprite
+    	rb = GameObject.getComponent<Rigidbody2D>(); // Get Rigidbody component from sprite
         if (leftSide)
         	rb.position.x = 0; // If on the left side, set x-position to 0
         else
@@ -21,11 +21,10 @@ public class PaddleScript : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (leftSide) {
-        	if (Input.GetAxis("LeftSide")) {
-        		rb.velocity.x = 
-        	}
+        	float translation = Input.GetAxis("LeftSide");
         }
         else {
+        	float translation = Input.GetAxis("RightSide");
         	// Right side
         }
     }
