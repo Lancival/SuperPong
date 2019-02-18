@@ -94,7 +94,7 @@ public class PowerupScript : MonoBehaviour
     }
 
     void addObstacle(){
-    	//GameObject obj = Instantiate(Obstacle);
+    	GameObject obj = Instantiate(Obstacle);
 
     }
 

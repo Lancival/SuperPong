@@ -168,3 +168,5 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ObstacleScript
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.QuitScript
 e4eb2bf36a137718b81e2d1cf30b4546 Assembly-CSharp.dll:.TimeScript
+40976b892ebaf95af43bcbe3eb160ce0 Assembly-CSharp.dll:.VictorySound
+3aebc9151a09ed7e7da51308a222207a Assembly-CSharp.dll:.TitleSong
