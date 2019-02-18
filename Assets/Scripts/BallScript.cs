@@ -13,6 +13,7 @@ public class BallScript : MonoBehaviour {
     void Start() {
         gc = GameObject.Find("GameController").GetComponent<GameControllerScript>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
 		ResetVelocity();
     }
 
@@ -26,6 +27,7 @@ public class BallScript : MonoBehaviour {
 		rb.velocity = new Vector2((Random.Range(0.0f, 1.0f) < 0.5 ? 1 : -1) * Random.Range(0.3f, 1.0f), Random.Range(-1.0f, 1.0f));
 		rb.velocity = rb.velocity.normalized * gc.speed();
 		velocity = rb.velocity;
+		sr.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), 1.0f);
 	}
 
     // Update is called once per frame
