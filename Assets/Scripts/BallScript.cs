@@ -46,6 +46,11 @@ public class BallScript : MonoBehaviour {
             collision.gameObject.GetComponent<PowerupScript>().randomPowerup();
             return;
         }
+		if (collision.gameObject.tag == "TimeDown")
+		{
+			collision.gameObject.GetComponent<TimeScript>().DoSlowmotion();
+			return;
+		}
 		if (collision.gameObject.tag == "Border_Left")
 			gc.increaseRightScore(1);
 		else if (collision.gameObject.tag == "Border_Right")

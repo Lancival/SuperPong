@@ -60,8 +60,10 @@
      <Compile Include="Assets\Scripts\ObstacleScript.cs" />
      <Compile Include="Assets\Scripts\PaddleScript.cs" />
      <Compile Include="Assets\Scripts\PowerupScript.cs" />
+     <Compile Include="Assets\Scripts\QuitScript.cs" />
      <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\ScoreTextControllerScript.cs" />
+     <Compile Include="Assets\Scripts\TimeScript.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/Richard/Documents/Unity/Super Pong/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

@@ -7,11 +7,13 @@ public class GameControllerScript : MonoBehaviour {
 
 	[SerializeField] private int m_speed = 1;
     [SerializeField] private GameObject Powerup;
+	[SerializeField] private GameObject TimeDown;
 	private int[] score;
     private int tickCounter = 0;
+	public bool timeflag = true;
 
-    // Start is called before the first frame update
-    void Start() {
+	// Start is called before the first frame update
+	void Start() {
     	score = new int[2];
     	score[0] = 0; // Left Player Score
     	score[1] = 0; // Right Player Score
@@ -22,7 +24,15 @@ public class GameControllerScript : MonoBehaviour {
         if (tickCounter++ >= 60) {
             GameObject obj = Instantiate(Powerup, new Vector3(Random.Range(-7f, 7f), Random.Range(-4.5f, 4.5f), 0), Quaternion.identity);
             tickCounter = 0;
+			int randomGenerator = Random.Range(0, 6);
+			if (randomGenerator == 4 && timeflag)
+			{
+				timeflag = false;
+				GameObject slowTime = Instantiate(TimeDown, new Vector3(Random.Range(-7f, 7f), Random.Range(-4.5f, 4.5f), 0), Quaternion.identity);
+				
+			}
         }
+		
         if (score[0] == 20 || score[1] == 20) {
         	ScoreScript.leftScore = score[0];
         	ScoreScript.rightScore = score[1];
@@ -30,8 +40,8 @@ public class GameControllerScript : MonoBehaviour {
         }
     }
 
-    // Accessors
-    public int speed() {return m_speed;}
+	// Accessors
+	public int speed() { return m_speed; }
 	public int leftScore() {return score[0];}
 	public int rightScore() {return score[1];}
 
@@ -39,6 +49,7 @@ public class GameControllerScript : MonoBehaviour {
     public void increaseLeftScore(int howMuch) {score[0] += howMuch;}
 	public void increaseRightScore(int howMuch) {score[1] += howMuch;}
     public void increaseSpeed(int howMuch) {m_speed += howMuch;}
+	public void flagTrue() { timeflag = true;}
 
 
 }

@@ -118,6 +118,8 @@ MonoBehaviour:
   Ball: {fileID: 537491227861557850, guid: 6a7b12e2817024248ab428d53cbe1b35, type: 3}
   Obstacle: {fileID: 9176772501764509892, guid: 5d9d37ea868e2466aa93e7659eae51f3,
     type: 3}
+  DecoyPowerup: {fileID: 2263186410441917354, guid: 23f6e2460b5fa4c04b9c643ee002b7cd,
+    type: 3}
 --- !u!58 &5043149519595620509
 CircleCollider2D:
   m_ObjectHideFlags: 0

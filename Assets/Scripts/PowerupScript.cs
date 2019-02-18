@@ -8,6 +8,7 @@ public class PowerupScript : MonoBehaviour
 	private Rigidbody2D rb;
 	[SerializeField] private GameObject Ball;
 	[SerializeField] private GameObject Obstacle;
+	[SerializeField] private GameObject DecoyPowerup;
 
 
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class PowerupScript : MonoBehaviour
    	void Update() {}
 
    	public void randomPowerup(){
-   		int randomSeed = Random.Range(0, 5);
+   		int randomSeed = Random.Range(0, 6);
 
    		//incrementSpeed();
    		switch (randomSeed){
@@ -30,7 +31,7 @@ public class PowerupScript : MonoBehaviour
    			break;
 
    			case 1: 
-   			sizePaddles(.2f);
+   			sizePaddles(.4f);
    			break;
 
    			case 2:
@@ -45,7 +46,9 @@ public class PowerupScript : MonoBehaviour
    			addObstacle();
    			break;
 
-
+   			case 5:
+   			addDecoy();
+   			break;
 
    		}
 
@@ -83,8 +86,12 @@ public class PowerupScript : MonoBehaviour
     }
 
     void addObstacle(){
-    	GameObject obj = Instantiate(Obstacle);
+    	//GameObject obj = Instantiate(Obstacle);
 
+    }
+
+    void addDecoy(){
+    	GameObject obj = Instantiate(DecoyPowerup);//Gameobject obj = Instantiate(DecoyPowerup);
     }
 
 

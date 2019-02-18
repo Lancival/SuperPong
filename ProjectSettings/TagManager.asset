@@ -8,6 +8,7 @@ TagManager:
   - Powerup
   - Border_Left
   - Border_Right
+  - TimeDown
   layers:
   - Default
   - TransparentFX
