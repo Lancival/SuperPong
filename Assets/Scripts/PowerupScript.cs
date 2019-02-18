@@ -74,8 +74,16 @@ public class PowerupScript : MonoBehaviour
     		arr[1].transform.localScale += new Vector3(0, amt, 0);
     	}
     	*/
+    	if (amt < 0 && arr[0].transform.localScale.y > .4)
+    	{
     	arr[0].transform.localScale *= (1+amt);
     	arr[1].transform.localScale *= (1+amt);
+    	}
+    	if (amt > 0 && arr[0].transform.localScale.y < 2.0)
+    	{
+    	arr[0].transform.localScale *= (1+amt);
+    	arr[1].transform.localScale *= (1+amt);
+    	}
 
 
 	//transform.localScale += new Vector3(0.1F, 0, 0);

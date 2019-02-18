@@ -33,7 +33,7 @@ public class GameControllerScript : MonoBehaviour {
 			}
         }
 		
-        if (score[0] == 20 || score[1] == 20) {
+        if (score[0] >= 20 || score[1] >= 20) {
         	ScoreScript.leftScore = score[0];
         	ScoreScript.rightScore = score[1];
         	SceneManager.LoadScene("Game End");

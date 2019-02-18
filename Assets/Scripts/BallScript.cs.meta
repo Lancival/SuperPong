@@ -3,7 +3,11 @@ guid: 1ecebb6b5714f402fa9a143ed32128cf
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pongSound: {fileID: 8300000, guid: c315f9280833b41afa42528ca7981881, type: 3}
+  - pingSound: {fileID: 8300000, guid: da08e28b00d4b42018b9d7a3521eaf73, type: 3}
+  - pointSound: {instanceID: 0}
+  - audio: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -11,7 +11,10 @@ public class GameEndTextController : MonoBehaviour {
     void Start() {
     	int lScore = ScoreScript.leftScore;
     	int rScore = ScoreScript.rightScore;
-    	GameEndText.text = lScore.ToString() + " : " + rScore.ToString() + "\nPlayer " + (lScore > rScore ? "1" : "2") + " Won!";
+        if (lscore == rscore)
+            GameEndText.text = lScore.ToString() + " : " + rScore.ToString() + "\nIt's a tie!";
+        else 
+    	   GameEndText.text = lScore.ToString() + " : " + rScore.ToString() + "\nPlayer " + (lScore > rScore ? "1" : "2") + " Won!";
     	ScoreScript.leftScore = 0;
     	ScoreScript.rightScore = 0;
     }
