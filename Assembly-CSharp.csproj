@@ -64,6 +64,8 @@
      <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\ScoreTextControllerScript.cs" />
      <Compile Include="Assets\Scripts\TimeScript.cs" />
+     <Compile Include="Assets\TitleSong.cs" />
+     <Compile Include="Assets\VictorySound.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/Richard/Documents/Unity/Super Pong/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

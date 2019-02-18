@@ -37,6 +37,7 @@ public class GameControllerScript : MonoBehaviour {
         	ScoreScript.leftScore = score[0];
         	ScoreScript.rightScore = score[1];
         	SceneManager.LoadScene("Game End");
+			
         }
     }
 

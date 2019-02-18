@@ -1225,11 +1225,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1454069461082301738, guid: 6a7b12e2817024248ab428d53cbe1b35,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2717884134963109361, guid: 6a7b12e2817024248ab428d53cbe1b35,
         type: 3}
       propertyPath: pong
@@ -1250,6 +1245,11 @@ PrefabInstance:
       propertyPath: pointSound
       value: 
       objectReference: {fileID: 8300000, guid: c315f9280833b41afa42528ca7981881, type: 3}
+    - target: {fileID: 1454069461082301738, guid: 6a7b12e2817024248ab428d53cbe1b35,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3938106913565079715, guid: 6a7b12e2817024248ab428d53cbe1b35,
         type: 3}
       propertyPath: m_Enabled
